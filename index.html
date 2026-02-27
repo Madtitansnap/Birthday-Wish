@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Khushi! 🎂</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffd6e0, #ffeaf4, #fff0f6);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Floating sparkles */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: sparkle 20s linear infinite;
+}
+
+@keyframes sparkle {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200px); }
+}
+
+.card {
+    position: relative;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(255,105,180,0.3);
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+    z-index: 2;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.2rem;
+    color: #ff4d88;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(255,77,136,0.5);
+}
+
+p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.name {
+    color: #ff1493;
+}
+
+.btn-celebrate {
+    padding: 14px 35px;
+    background: linear-gradient(45deg, #ff4d88, #ff85a2);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 77, 136, 0.4);
+}
+
+.btn-celebrate:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div style="font-size: 4rem;">🎂💖</div>
+    <h1>Happy Birthday <span class="name">Khushi</span>! 🎀</h1>
+    <p>May your smile shine brighter than the candles on your cake and may your day be as special as you are 💕✨</p>
+    <button class="btn-celebrate" onclick="triggerConfetti()">Celebrate! 🎉</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+window.onload = () => {
+    triggerConfetti();
+};
+
+function triggerConfetti() {
+    confetti({
+        particleCount: 200,
+        spread: 120,
+        origin: { y: 0.6 }
+    });
+}
+</script>
+
+</body>
+</html>
